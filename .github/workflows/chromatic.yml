@@ -22,7 +22,7 @@ jobs:
           autoAcceptChanges: "main"
           buildScriptName: "build:storybook"
         env:
-          CHROMATIC_PROJECT_TOKEN: gcaw1ai2dgo
+          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           STORYBOOK_GITHUB_SHA: ${{ github.event.pull_request.head.sha }}
 
       - name: "Chromatic outputs"
