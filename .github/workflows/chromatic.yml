@@ -14,6 +14,7 @@ jobs:
         id: run-chromatic-action
         uses: chromaui/action-next@v1
         with:
+          exitOnceUploaded: true
           diagnostics: true
           autoAcceptChanges: "main"
           buildScriptName: "build:storybook"
