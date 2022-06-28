@@ -16,7 +16,6 @@ jobs:
         with:
           exitOnceUploaded: true
           diagnostics: true
-          autoAcceptChanges: "main"
           buildScriptName: "build:storybook"
         env:
           CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
