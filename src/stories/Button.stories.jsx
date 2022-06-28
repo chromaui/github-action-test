@@ -23,6 +23,12 @@ Secondary.args = {
   label: 'Button',
 };
 
+export const XLarge = Template.bind({});
+XLarge.args = {
+  size: 'x-large',
+  label: 'Button',
+};
+
 export const Large = Template.bind({});
 Large.args = {
   size: 'large',
