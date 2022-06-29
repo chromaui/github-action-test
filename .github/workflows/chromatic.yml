@@ -14,11 +14,10 @@ jobs:
         id: run-chromatic-action
         uses: chromaui/action-next@v1
         with:
-          onlyChanged: true
-          traceChanged: true
           diagnostics: true
-          autoAcceptChanges: "main"
           buildScriptName: "build:storybook"
+          autoAcceptChanges: "main"
+          exitOnceUploaded: true
         env:
           CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           STORYBOOK_GITHUB_SHA: ${{ github.event.pull_request.head.sha }}
