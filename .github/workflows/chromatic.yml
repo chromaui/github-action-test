@@ -18,18 +18,6 @@ jobs:
           traceChanged: true
           diagnostics: true
           autoAcceptChanges: "main"
-          buildScriptName: "build:storybook"
         env:
           CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           STORYBOOK_GITHUB_SHA: ${{ github.event.pull_request.head.sha }}
-
-      - name: "Chromatic outputs"
-        run: echo ${{steps.run-chromatic-action.outputs.code}}
-
-      - uses: actions/upload-artifact@v2
-        if: always()
-        with:
-          name: chromatic-build-artifacts-${{ github.run_id }}
-          path: |
-            chromatic-diagnostics.json
-            **/build-storybook.log
